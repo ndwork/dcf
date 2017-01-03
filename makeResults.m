@@ -140,12 +140,12 @@ function makeResults
     end
 
     if ~exist( noiseImgFile, 'file' )
-      lsdcMSEs = MSEs{ strcmp( algorithms, 'LSDC' ) };
-      rlsdcMSEs = MSEs{ strcmp( algorithms, 'rLSDC' ) };
+      tblsdcMSEs = MSEs{ strcmp( algorithms, 'tbLSDC' ) };
+      rtblsdcMSEs = MSEs{ strcmp( algorithms, 'rtbLSDC' ) };
       noiseH = figure;
-      plotnice( noiseScales, lsdcMSEs, 'k--', 'lineWidth', 2 );
+      plotnice( noiseScales, tblsdcMSEs, 'k--', 'lineWidth', 2 );
       hold on;
-      plotnice( noiseScales, rlsdcMSEs, 'b', 'lineWidth', 2 );
+      plotnice( noiseScales, rtblsdcMSEs, 'b', 'lineWidth', 2 );
       ax = gca;
       set( ax, 'ytick', [min(ax.YTick) max(ax.YTick)] );
       legend( 'tbLSDC', 'rtbLSDC', 'Location', 'northwest' );
